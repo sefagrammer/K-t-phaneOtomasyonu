@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="KütüphaneOtomasyonuModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Kullanicilar">
+    <Key>
+      <PropertyRef Name="kullanici_id" />
+    </Key>
+    <Property Name="kullanici_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="kullanici_ad" Type="nvarchar" MaxLength="50" />
+    <Property Name="kullanici_soyad" Type="nvarchar" MaxLength="50" />
+    <Property Name="kullanici_tc" Type="nvarchar" MaxLength="11" />
+    <Property Name="kullanici_mail" Type="nvarchar" MaxLength="50" />
+    <Property Name="kullanici_tel" Type="nvarchar" MaxLength="11" />
+    <Property Name="kullanici_ceza" Type="float" />
+  </EntityType>
+  <EntityType Name="PersonelTable">
+    <Key>
+      <PropertyRef Name="personel_id" />
+    </Key>
+    <Property Name="personel_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="personel_ad" Type="nvarchar" MaxLength="50" />
+    <Property Name="personel_soyad" Type="nvarchar" MaxLength="50" />
+    <Property Name="personel_tc" Type="nvarchar" MaxLength="11" />
+    <Property Name="personel_tel" Type="nvarchar" MaxLength="11" />
+    <Property Name="personel_mail" Type="nvarchar" MaxLength="50" />
+    <Property Name="personel_kullaniciadi" Type="nvarchar" MaxLength="50" />
+    <Property Name="personel_sifre" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="KütüphaneOtomasyonuModelStoreContainer">
+    <EntitySet Name="Kullanicilar" EntityType="Self.Kullanicilar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PersonelTable" EntityType="Self.PersonelTable" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
