@@ -31,15 +31,15 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IslemPaneli));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.KaynakSilBtn = new System.Windows.Forms.Button();
+            this.ımageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.KaynakDuzenleBtn = new System.Windows.Forms.Button();
+            this.KaynakEkleBtn = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.Ksilbtn = new System.Windows.Forms.Button();
             this.Kduzenbtn = new System.Windows.Forms.Button();
             this.Keklebtn = new System.Windows.Forms.Button();
             this.Kullanicibtn = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.KaynakEkleBtn = new System.Windows.Forms.Button();
-            this.KaynakDuzenleBtn = new System.Windows.Forms.Button();
-            this.KaynakSilBtn = new System.Windows.Forms.Button();
-            this.ımageList1 = new System.Windows.Forms.ImageList(this.components);
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,6 +60,85 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(150, 636);
             this.panel1.TabIndex = 0;
+            // 
+            // KaynakSilBtn
+            // 
+            this.KaynakSilBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(96)))), ((int)(((byte)(26)))));
+            this.KaynakSilBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.KaynakSilBtn.FlatAppearance.BorderSize = 0;
+            this.KaynakSilBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.KaynakSilBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.KaynakSilBtn.ImageKey = "delete book.png";
+            this.KaynakSilBtn.ImageList = this.ımageList1;
+            this.KaynakSilBtn.Location = new System.Drawing.Point(0, 490);
+            this.KaynakSilBtn.Name = "KaynakSilBtn";
+            this.KaynakSilBtn.Size = new System.Drawing.Size(150, 70);
+            this.KaynakSilBtn.TabIndex = 11;
+            this.KaynakSilBtn.Text = "              Kaynak Sil";
+            this.KaynakSilBtn.UseVisualStyleBackColor = false;
+            // 
+            // ımageList1
+            // 
+            this.ımageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ımageList1.ImageStream")));
+            this.ımageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.ımageList1.Images.SetKeyName(0, "users.png");
+            this.ımageList1.Images.SetKeyName(1, "add.png");
+            this.ımageList1.Images.SetKeyName(2, "delete.png");
+            this.ımageList1.Images.SetKeyName(3, "update.png");
+            this.ımageList1.Images.SetKeyName(4, "add book.png");
+            this.ımageList1.Images.SetKeyName(5, "books.png");
+            this.ımageList1.Images.SetKeyName(6, "delete book.png");
+            this.ımageList1.Images.SetKeyName(7, "update book.png");
+            // 
+            // KaynakDuzenleBtn
+            // 
+            this.KaynakDuzenleBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(96)))), ((int)(((byte)(26)))));
+            this.KaynakDuzenleBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.KaynakDuzenleBtn.FlatAppearance.BorderSize = 0;
+            this.KaynakDuzenleBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.KaynakDuzenleBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.KaynakDuzenleBtn.ImageKey = "update book.png";
+            this.KaynakDuzenleBtn.ImageList = this.ımageList1;
+            this.KaynakDuzenleBtn.Location = new System.Drawing.Point(0, 420);
+            this.KaynakDuzenleBtn.Name = "KaynakDuzenleBtn";
+            this.KaynakDuzenleBtn.Size = new System.Drawing.Size(150, 70);
+            this.KaynakDuzenleBtn.TabIndex = 10;
+            this.KaynakDuzenleBtn.Text = "              Kaynak Düzenle";
+            this.KaynakDuzenleBtn.UseVisualStyleBackColor = false;
+            // 
+            // KaynakEkleBtn
+            // 
+            this.KaynakEkleBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(96)))), ((int)(((byte)(26)))));
+            this.KaynakEkleBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.KaynakEkleBtn.FlatAppearance.BorderSize = 0;
+            this.KaynakEkleBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.KaynakEkleBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.KaynakEkleBtn.ImageKey = "add book.png";
+            this.KaynakEkleBtn.ImageList = this.ımageList1;
+            this.KaynakEkleBtn.Location = new System.Drawing.Point(0, 350);
+            this.KaynakEkleBtn.Name = "KaynakEkleBtn";
+            this.KaynakEkleBtn.Size = new System.Drawing.Size(150, 70);
+            this.KaynakEkleBtn.TabIndex = 9;
+            this.KaynakEkleBtn.Text = "              Kaynak Ekle";
+            this.KaynakEkleBtn.UseVisualStyleBackColor = false;
+            this.KaynakEkleBtn.Click += new System.EventHandler(this.KaynakEkleBtn_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(81)))), ((int)(((byte)(22)))));
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.ImageKey = "books.png";
+            this.button1.ImageList = this.ımageList1;
+            this.button1.Location = new System.Drawing.Point(0, 280);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(150, 70);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "              Kaynaklar";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Ksilbtn
             // 
@@ -128,84 +207,6 @@
             this.Kullanicibtn.Text = "              Kullanıcılar";
             this.Kullanicibtn.UseVisualStyleBackColor = false;
             this.Kullanicibtn.Click += new System.EventHandler(this.Kullanicibtn_Click);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(81)))), ((int)(((byte)(22)))));
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.ImageKey = "books.png";
-            this.button1.ImageList = this.ımageList1;
-            this.button1.Location = new System.Drawing.Point(0, 280);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(150, 70);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "              Kaynaklar";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // KaynakEkleBtn
-            // 
-            this.KaynakEkleBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(96)))), ((int)(((byte)(26)))));
-            this.KaynakEkleBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.KaynakEkleBtn.FlatAppearance.BorderSize = 0;
-            this.KaynakEkleBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.KaynakEkleBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.KaynakEkleBtn.ImageKey = "add book.png";
-            this.KaynakEkleBtn.ImageList = this.ımageList1;
-            this.KaynakEkleBtn.Location = new System.Drawing.Point(0, 350);
-            this.KaynakEkleBtn.Name = "KaynakEkleBtn";
-            this.KaynakEkleBtn.Size = new System.Drawing.Size(150, 70);
-            this.KaynakEkleBtn.TabIndex = 9;
-            this.KaynakEkleBtn.Text = "              Kaynak Ekle";
-            this.KaynakEkleBtn.UseVisualStyleBackColor = false;
-            // 
-            // KaynakDuzenleBtn
-            // 
-            this.KaynakDuzenleBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(96)))), ((int)(((byte)(26)))));
-            this.KaynakDuzenleBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.KaynakDuzenleBtn.FlatAppearance.BorderSize = 0;
-            this.KaynakDuzenleBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.KaynakDuzenleBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.KaynakDuzenleBtn.ImageKey = "update book.png";
-            this.KaynakDuzenleBtn.ImageList = this.ımageList1;
-            this.KaynakDuzenleBtn.Location = new System.Drawing.Point(0, 420);
-            this.KaynakDuzenleBtn.Name = "KaynakDuzenleBtn";
-            this.KaynakDuzenleBtn.Size = new System.Drawing.Size(150, 70);
-            this.KaynakDuzenleBtn.TabIndex = 10;
-            this.KaynakDuzenleBtn.Text = "              Kaynak Düzenle";
-            this.KaynakDuzenleBtn.UseVisualStyleBackColor = false;
-            // 
-            // KaynakSilBtn
-            // 
-            this.KaynakSilBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(175)))), ((int)(((byte)(96)))), ((int)(((byte)(26)))));
-            this.KaynakSilBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.KaynakSilBtn.FlatAppearance.BorderSize = 0;
-            this.KaynakSilBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.KaynakSilBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.KaynakSilBtn.ImageKey = "delete book.png";
-            this.KaynakSilBtn.ImageList = this.ımageList1;
-            this.KaynakSilBtn.Location = new System.Drawing.Point(0, 490);
-            this.KaynakSilBtn.Name = "KaynakSilBtn";
-            this.KaynakSilBtn.Size = new System.Drawing.Size(150, 70);
-            this.KaynakSilBtn.TabIndex = 11;
-            this.KaynakSilBtn.Text = "              Kaynak Sil";
-            this.KaynakSilBtn.UseVisualStyleBackColor = false;
-            // 
-            // ımageList1
-            // 
-            this.ımageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ımageList1.ImageStream")));
-            this.ımageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.ımageList1.Images.SetKeyName(0, "users.png");
-            this.ımageList1.Images.SetKeyName(1, "add.png");
-            this.ımageList1.Images.SetKeyName(2, "delete.png");
-            this.ımageList1.Images.SetKeyName(3, "update.png");
-            this.ımageList1.Images.SetKeyName(4, "add book.png");
-            this.ımageList1.Images.SetKeyName(5, "books.png");
-            this.ımageList1.Images.SetKeyName(6, "delete book.png");
-            this.ımageList1.Images.SetKeyName(7, "update book.png");
             // 
             // IslemPaneli
             // 

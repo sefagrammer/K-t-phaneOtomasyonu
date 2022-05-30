@@ -104,5 +104,12 @@ namespace KutuphaneOtomasyonu
             kListe.MdiParent = this;
             kListe.Show();
         }
+
+        private void KaynakEkleBtn_Click(object sender, EventArgs e)
+        {
+            KaynakEkleForm kEkle = new KaynakEkleForm();
+            kEkle.MdiParent = this;
+            kEkle.Show();
+        }
     }
 }

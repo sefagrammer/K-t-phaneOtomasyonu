@@ -5,6 +5,17 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="KütüphaneOtomasyonuModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Kaynaklar">
+          <Key>
+            <PropertyRef Name="kaynak_id" />
+          </Key>
+          <Property Name="kaynak_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="kaynak_ad" Type="nvarchar" MaxLength="50" />
+          <Property Name="kaynak_yazar" Type="nvarchar" MaxLength="50" />
+          <Property Name="kaynak_yayıncı" Type="nvarchar" MaxLength="50" />
+          <Property Name="kaynak_sayfasayısı" Type="int" />
+          <Property Name="kaynak_basımtarihi" Type="datetime" />
+        </EntityType>
         <EntityType Name="Kullanicilar">
           <Key>
             <PropertyRef Name="kullanici_id" />
@@ -16,6 +27,7 @@
           <Property Name="kullanici_mail" Type="nvarchar" MaxLength="50" />
           <Property Name="kullanici_tel" Type="nvarchar" MaxLength="11" />
           <Property Name="kullanici_ceza" Type="float" />
+          <Property Name="kullanici_cinsiyet" Type="nvarchar" MaxLength="1" />
         </EntityType>
         <EntityType Name="PersonelTable">
           <Key>
@@ -31,6 +43,7 @@
           <Property Name="personel_sifre" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityContainer Name="KütüphaneOtomasyonuModelStoreContainer">
+          <EntitySet Name="Kaynaklar" EntityType="Self.Kaynaklar" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Kullanicilar" EntityType="Self.Kullanicilar" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PersonelTable" EntityType="Self.PersonelTable" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
@@ -54,6 +67,7 @@
         <EntityContainer Name="KütüphaneOtomasyonuEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="PersonelTable" EntityType="Self.PersonelTable" />
           <EntitySet Name="Kullanicilar" EntityType="KütüphaneOtomasyonuModel.Kullanicilar" />
+          <EntitySet Name="Kaynaklar" EntityType="KütüphaneOtomasyonuModel.Kaynaklar" />
         </EntityContainer>
         <EntityType Name="Kullanicilar">
           <Key>
@@ -66,6 +80,18 @@
           <Property Name="kullanici_mail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="kullanici_tel" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
           <Property Name="kullanici_ceza" Type="Double" />
+          <Property Name="kullanici_cinsiyet" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Kaynaklar">
+          <Key>
+            <PropertyRef Name="kaynak_id" />
+          </Key>
+          <Property Name="kaynak_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="kaynak_ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="kaynak_yazar" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="kaynak_yayıncı" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="kaynak_sayfasayısı" Type="Int32" />
+          <Property Name="kaynak_basımtarihi" Type="DateTime" Precision="3" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -90,6 +116,7 @@
           <EntitySetMapping Name="Kullanicilar">
             <EntityTypeMapping TypeName="KütüphaneOtomasyonuModel.Kullanicilar">
               <MappingFragment StoreEntitySet="Kullanicilar">
+                <ScalarProperty Name="kullanici_cinsiyet" ColumnName="kullanici_cinsiyet" />
                 <ScalarProperty Name="kullanici_ceza" ColumnName="kullanici_ceza" />
                 <ScalarProperty Name="kullanici_tel" ColumnName="kullanici_tel" />
                 <ScalarProperty Name="kullanici_mail" ColumnName="kullanici_mail" />
@@ -97,6 +124,18 @@
                 <ScalarProperty Name="kullanici_soyad" ColumnName="kullanici_soyad" />
                 <ScalarProperty Name="kullanici_ad" ColumnName="kullanici_ad" />
                 <ScalarProperty Name="kullanici_id" ColumnName="kullanici_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Kaynaklar">
+            <EntityTypeMapping TypeName="KütüphaneOtomasyonuModel.Kaynaklar">
+              <MappingFragment StoreEntitySet="Kaynaklar">
+                <ScalarProperty Name="kaynak_basımtarihi" ColumnName="kaynak_basımtarihi" />
+                <ScalarProperty Name="kaynak_sayfasayısı" ColumnName="kaynak_sayfasayısı" />
+                <ScalarProperty Name="kaynak_yayıncı" ColumnName="kaynak_yayıncı" />
+                <ScalarProperty Name="kaynak_yazar" ColumnName="kaynak_yazar" />
+                <ScalarProperty Name="kaynak_ad" ColumnName="kaynak_ad" />
+                <ScalarProperty Name="kaynak_id" ColumnName="kaynak_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

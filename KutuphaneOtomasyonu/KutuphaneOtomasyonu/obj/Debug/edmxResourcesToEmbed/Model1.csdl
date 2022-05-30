@@ -16,6 +16,7 @@
   <EntityContainer Name="KütüphaneOtomasyonuEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="PersonelTable" EntityType="Self.PersonelTable" />
     <EntitySet Name="Kullanicilar" EntityType="KütüphaneOtomasyonuModel.Kullanicilar" />
+    <EntitySet Name="Kaynaklar" EntityType="KütüphaneOtomasyonuModel.Kaynaklar" />
   </EntityContainer>
   <EntityType Name="Kullanicilar">
     <Key>
@@ -28,5 +29,17 @@
     <Property Name="kullanici_mail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="kullanici_tel" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
     <Property Name="kullanici_ceza" Type="Double" />
+    <Property Name="kullanici_cinsiyet" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Kaynaklar">
+    <Key>
+      <PropertyRef Name="kaynak_id" />
+    </Key>
+    <Property Name="kaynak_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="kaynak_ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="kaynak_yazar" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="kaynak_yayıncı" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="kaynak_sayfasayısı" Type="Int32" />
+    <Property Name="kaynak_basımtarihi" Type="DateTime" Precision="3" />
   </EntityType>
 </Schema>

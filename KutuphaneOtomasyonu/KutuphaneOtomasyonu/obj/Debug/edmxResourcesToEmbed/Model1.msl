@@ -18,6 +18,7 @@
     <EntitySetMapping Name="Kullanicilar">
       <EntityTypeMapping TypeName="KütüphaneOtomasyonuModel.Kullanicilar">
         <MappingFragment StoreEntitySet="Kullanicilar">
+          <ScalarProperty Name="kullanici_cinsiyet" ColumnName="kullanici_cinsiyet" />
           <ScalarProperty Name="kullanici_ceza" ColumnName="kullanici_ceza" />
           <ScalarProperty Name="kullanici_tel" ColumnName="kullanici_tel" />
           <ScalarProperty Name="kullanici_mail" ColumnName="kullanici_mail" />
@@ -25,6 +26,18 @@
           <ScalarProperty Name="kullanici_soyad" ColumnName="kullanici_soyad" />
           <ScalarProperty Name="kullanici_ad" ColumnName="kullanici_ad" />
           <ScalarProperty Name="kullanici_id" ColumnName="kullanici_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kaynaklar">
+      <EntityTypeMapping TypeName="KütüphaneOtomasyonuModel.Kaynaklar">
+        <MappingFragment StoreEntitySet="Kaynaklar">
+          <ScalarProperty Name="kaynak_basımtarihi" ColumnName="kaynak_basımtarihi" />
+          <ScalarProperty Name="kaynak_sayfasayısı" ColumnName="kaynak_sayfasayısı" />
+          <ScalarProperty Name="kaynak_yayıncı" ColumnName="kaynak_yayıncı" />
+          <ScalarProperty Name="kaynak_yazar" ColumnName="kaynak_yazar" />
+          <ScalarProperty Name="kaynak_ad" ColumnName="kaynak_ad" />
+          <ScalarProperty Name="kaynak_id" ColumnName="kaynak_id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
