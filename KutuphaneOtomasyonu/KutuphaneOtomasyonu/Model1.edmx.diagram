@@ -6,8 +6,12 @@
     <edmx:Diagrams>
       <Diagram DiagramId="b2fd68071a1c4ddd86ad38607ed3ce83" Name="Diagram1">
         <EntityTypeShape EntityType="KütüphaneOtomasyonuModel.PersonelTable" Width="1.5" PointX="0.5" PointY="0.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="KütüphaneOtomasyonuModel.Kullanicilar" Width="1.5" PointX="2.25" PointY="0.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="KütüphaneOtomasyonuModel.Kaynaklar" Width="1.5" PointX="4" PointY="0.5" />
+        <EntityTypeShape EntityType="KütüphaneOtomasyonuModel.Kullanicilar" Width="1.5" PointX="4.875" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="KütüphaneOtomasyonuModel.Kaynaklar" Width="1.5" PointX="4.875" PointY="0.5" />
+        <EntityTypeShape EntityType="KütüphaneOtomasyonuModel.Kayitlar" Width="1.5" PointX="2.5" PointY="0.5" />
+        <EntityTypeShape EntityType="KütüphaneOtomasyonuModel.sysdiagrams" Width="1.5" PointX="0.875" PointY="3.75" />
+        <AssociationConnector Association="KütüphaneOtomasyonuModel.FK_Kayitlar_Kaynaklar" />
+        <AssociationConnector Association="KütüphaneOtomasyonuModel.FK_Kayitlar_Kullanicilar" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

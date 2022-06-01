@@ -111,5 +111,20 @@ namespace KutuphaneOtomasyonu
             kEkle.MdiParent = this;
             kEkle.Show();
         }
+
+        private void KaynakSilBtn_Click(object sender, EventArgs e)
+        {
+            KaynakSilForm kSil = new KaynakSilForm();
+            kSil.MdiParent = this;  
+            kSil.Show();
+        }
+
+        private void KaynakDuzenleBtn_Click(object sender, EventArgs e)
+        {
+            KaynakGuncelleForm kGuncel = new KaynakGuncelleForm();
+            kGuncel.MdiParent = this;
+            kGuncel.Show();
+
+        }
     }
 }

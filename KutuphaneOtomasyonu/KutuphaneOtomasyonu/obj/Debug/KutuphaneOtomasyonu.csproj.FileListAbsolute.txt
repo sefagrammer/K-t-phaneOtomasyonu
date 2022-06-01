@@ -21,3 +21,5 @@ C:\Users\sefal\Desktop\Kütüphane Otomasyonu\KutuphaneOtomasyonu\KutuphaneOtoma
 C:\Users\sefal\Desktop\Kütüphane Otomasyonu\KutuphaneOtomasyonu\KutuphaneOtomasyonu\obj\Debug\KutuphaneOtomasyonu.Kullanıcı.KullaniciGuncelleForm.resources
 C:\Users\sefal\Desktop\Kütüphane Otomasyonu\KutuphaneOtomasyonu\KutuphaneOtomasyonu\obj\Debug\KutuphaneOtomasyonu.Kaynak.KaynakListeForm.resources
 C:\Users\sefal\Desktop\Kütüphane Otomasyonu\KutuphaneOtomasyonu\KutuphaneOtomasyonu\obj\Debug\KutuphaneOtomasyonu.Kaynak.KaynakEkleForm.resources
+C:\Users\sefal\Desktop\Kütüphane Otomasyonu\KutuphaneOtomasyonu\KutuphaneOtomasyonu\obj\Debug\KutuphaneOtomasyonu.Kaynak.KaynakSilForm.resources
+C:\Users\sefal\Desktop\Kütüphane Otomasyonu\KutuphaneOtomasyonu\KutuphaneOtomasyonu\obj\Debug\KutuphaneOtomasyonu.Kaynak.KaynakGuncelleForm.resources

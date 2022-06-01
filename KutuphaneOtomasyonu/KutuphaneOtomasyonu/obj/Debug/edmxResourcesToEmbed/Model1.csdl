@@ -17,6 +17,16 @@
     <EntitySet Name="PersonelTable" EntityType="Self.PersonelTable" />
     <EntitySet Name="Kullanicilar" EntityType="KütüphaneOtomasyonuModel.Kullanicilar" />
     <EntitySet Name="Kaynaklar" EntityType="KütüphaneOtomasyonuModel.Kaynaklar" />
+    <EntitySet Name="Kayitlar" EntityType="KütüphaneOtomasyonuModel.Kayitlar" />
+    <EntitySet Name="sysdiagrams" EntityType="KütüphaneOtomasyonuModel.sysdiagrams" />
+    <AssociationSet Name="FK_Kayitlar_Kaynaklar" Association="KütüphaneOtomasyonuModel.FK_Kayitlar_Kaynaklar">
+      <End Role="Kaynaklar" EntitySet="Kaynaklar" />
+      <End Role="Kayitlar" EntitySet="Kayitlar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Kayitlar_Kullanicilar" Association="KütüphaneOtomasyonuModel.FK_Kayitlar_Kullanicilar">
+      <End Role="Kullanicilar" EntitySet="Kullanicilar" />
+      <End Role="Kayitlar" EntitySet="Kayitlar" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="Kullanicilar">
     <Key>
@@ -30,6 +40,7 @@
     <Property Name="kullanici_tel" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
     <Property Name="kullanici_ceza" Type="Double" />
     <Property Name="kullanici_cinsiyet" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Kayitlar" Relationship="KütüphaneOtomasyonuModel.FK_Kayitlar_Kullanicilar" FromRole="Kullanicilar" ToRole="Kayitlar" />
   </EntityType>
   <EntityType Name="Kaynaklar">
     <Key>
@@ -41,5 +52,53 @@
     <Property Name="kaynak_yayıncı" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="kaynak_sayfasayısı" Type="Int32" />
     <Property Name="kaynak_basımtarihi" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Kayitlar" Relationship="KütüphaneOtomasyonuModel.FK_Kayitlar_Kaynaklar" FromRole="Kaynaklar" ToRole="Kayitlar" />
   </EntityType>
+  <EntityType Name="Kayitlar">
+    <Key>
+      <PropertyRef Name="kayit_id" />
+    </Key>
+    <Property Name="kayit_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="kullanici_id" Type="Int32" />
+    <Property Name="kitap_id" Type="Int32" />
+    <Property Name="alis_tarih" Type="DateTime" Precision="3" />
+    <Property Name="teslim_tarih" Type="DateTime" Precision="3" />
+    <Property Name="durum" Type="Boolean" />
+    <NavigationProperty Name="Kaynaklar" Relationship="KütüphaneOtomasyonuModel.FK_Kayitlar_Kaynaklar" FromRole="Kayitlar" ToRole="Kaynaklar" />
+    <NavigationProperty Name="Kullanicilar" Relationship="KütüphaneOtomasyonuModel.FK_Kayitlar_Kullanicilar" FromRole="Kayitlar" ToRole="Kullanicilar" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_Kayitlar_Kaynaklar">
+    <End Type="KütüphaneOtomasyonuModel.Kaynaklar" Role="Kaynaklar" Multiplicity="0..1" />
+    <End Type="KütüphaneOtomasyonuModel.Kayitlar" Role="Kayitlar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kaynaklar">
+        <PropertyRef Name="kaynak_id" />
+      </Principal>
+      <Dependent Role="Kayitlar">
+        <PropertyRef Name="kitap_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Kayitlar_Kullanicilar">
+    <End Type="KütüphaneOtomasyonuModel.Kullanicilar" Role="Kullanicilar" Multiplicity="0..1" />
+    <End Type="KütüphaneOtomasyonuModel.Kayitlar" Role="Kayitlar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kullanicilar">
+        <PropertyRef Name="kullanici_id" />
+      </Principal>
+      <Dependent Role="Kayitlar">
+        <PropertyRef Name="kullanici_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>
