@@ -23,6 +23,17 @@ namespace KutuphaneOtomasyonu.Kayit
         {
             var kayitlar = db.Kayitlar.Where(x => x.durum == false).ToList();
             dataGridView1.DataSource = kayitlar.ToList();
+
+            //Kolonlar Gizlendi
+            dataGridView1.Columns[0].Visible = false;
+            dataGridView1.Columns[6].Visible = false;
+            dataGridView1.Columns[7].Visible = false;
+
+            //Kolonlar Adlandırıldı
+            dataGridView1.Columns[1].HeaderText = "Kullanıcı ID";
+            dataGridView1.Columns[2].HeaderText = "Kaynak ID";
+            dataGridView1.Columns[3].HeaderText = "Alış Tarihi";
+            dataGridView1.Columns[4].HeaderText = "İade Tarihi";
         }
 
         private void button1_Click(object sender, EventArgs e)

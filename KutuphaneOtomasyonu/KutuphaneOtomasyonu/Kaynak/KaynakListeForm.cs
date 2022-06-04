@@ -25,6 +25,16 @@ namespace KutuphaneOtomasyonu.Kaynak
             var kaynaklar = db.Kaynaklar.ToList();
             dataGridView1.DataSource = kaynaklar.ToList();
 
+            // Kolonlar Gizlendi
+            dataGridView1.Columns[0].Visible = false;
+            dataGridView1.Columns[6].Visible = false;
+
+            //Kolon Adları Düzenlendi
+            dataGridView1.Columns[1].HeaderText = "Ad";
+            dataGridView1.Columns[2].HeaderText = "Yazar";
+            dataGridView1.Columns[3].HeaderText = "Yayıncı";
+            dataGridView1.Columns[4].HeaderText = "Sayfa Sayısı";
+            dataGridView1.Columns[5].HeaderText = "Basım Tarihi";
         }
     }
 }

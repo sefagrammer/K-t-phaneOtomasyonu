@@ -31,8 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IslemPaneli));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.ımageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.button2 = new System.Windows.Forms.Button();
             this.KaynakSilBtn = new System.Windows.Forms.Button();
             this.KaynakDuzenleBtn = new System.Windows.Forms.Button();
             this.KaynakEkleBtn = new System.Windows.Forms.Button();
@@ -41,7 +42,6 @@
             this.Kduzenbtn = new System.Windows.Forms.Button();
             this.Keklebtn = new System.Windows.Forms.Button();
             this.Kullanicibtn = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,22 +65,22 @@
             this.panel1.Size = new System.Drawing.Size(150, 636);
             this.panel1.TabIndex = 0;
             // 
-            // button2
+            // button3
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(81)))), ((int)(((byte)(22)))));
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.ImageKey = "books.png";
-            this.button2.ImageList = this.ımageList1;
-            this.button2.Location = new System.Drawing.Point(0, 480);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(150, 60);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "              Ödünç Ver";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(81)))), ((int)(((byte)(22)))));
+            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.ImageKey = "geri al.png";
+            this.button3.ImageList = this.ımageList1;
+            this.button3.Location = new System.Drawing.Point(0, 540);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(150, 60);
+            this.button3.TabIndex = 13;
+            this.button3.Text = "              Geri Al";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // ımageList1
             // 
@@ -94,6 +94,25 @@
             this.ımageList1.Images.SetKeyName(5, "books.png");
             this.ımageList1.Images.SetKeyName(6, "delete book.png");
             this.ımageList1.Images.SetKeyName(7, "update book.png");
+            this.ımageList1.Images.SetKeyName(8, "geri al.png");
+            this.ımageList1.Images.SetKeyName(9, "odunc ver.png");
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(81)))), ((int)(((byte)(22)))));
+            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.ImageKey = "odunc ver.png";
+            this.button2.ImageList = this.ımageList1;
+            this.button2.Location = new System.Drawing.Point(0, 480);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(150, 60);
+            this.button2.TabIndex = 12;
+            this.button2.Text = "              Ödünç Ver";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // KaynakSilBtn
             // 
@@ -230,23 +249,6 @@
             this.Kullanicibtn.Text = "              Kullanıcılar";
             this.Kullanicibtn.UseVisualStyleBackColor = false;
             this.Kullanicibtn.Click += new System.EventHandler(this.Kullanicibtn_Click);
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(81)))), ((int)(((byte)(22)))));
-            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.ImageKey = "books.png";
-            this.button3.ImageList = this.ımageList1;
-            this.button3.Location = new System.Drawing.Point(0, 540);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(150, 60);
-            this.button3.TabIndex = 13;
-            this.button3.Text = "              Geri Al";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // IslemPaneli
             // 

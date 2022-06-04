@@ -20,23 +20,25 @@ namespace KutuphaneOtomasyonu.Kayit
         KütüphaneOtomasyonuEntities db = new KütüphaneOtomasyonuEntities();
 
         private void OduncForm_Load(object sender, EventArgs e)
-        { 
+        {
+            var kayitList = from kayit in db.Kayitlar
+            select new { kayit.Kullanicilar.kullanici_ad, kayit.Kaynaklar.kaynak_ad, kayit.alis_tarih, kayit.teslim_tarih, kayit.durum };
             // Listeleme (Kayitlar)
-            var kayitList = db.Kayitlar.ToList();
+            //var kayitList = db.Kayitlar.ToList();
             dataGridView1.DataSource = kayitList.ToList();
 
             // Listeleme (Kaynaklar)
             var kaynakList = db.Kaynaklar.ToList();
             dataGridView2.DataSource = kaynakList.ToList();
 
-            //Gereksiz Yazıları Gizleme
-            dataGridView1.Columns[6].Visible = false;
-            dataGridView1.Columns[7].Visible = false;
-
-            //Kolon Adları Düzenlendi
-            dataGridView1.Columns[1].HeaderText = "Kullanıcı";
-            dataGridView1.Columns[2].HeaderText = "Kaynak";
-
+            //Kaynak Kolon Adları Düzenlendi
+            dataGridView2.Columns[6].Visible = false;
+            dataGridView2.Columns[0].HeaderText = "Kaynak ID";
+            dataGridView2.Columns[1].HeaderText = "Kaynak Adı";
+            dataGridView2.Columns[2].HeaderText = "Yazar";
+            dataGridView2.Columns[3].HeaderText = "Yayıncı";
+            dataGridView2.Columns[4].HeaderText = "Sayfa Sayısı";
+            dataGridView2.Columns[5].HeaderText = "Basım Tarihi";
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -79,6 +81,9 @@ namespace KutuphaneOtomasyonu.Kayit
 
             var kayitList = db.Kayitlar.ToList();
             dataGridView1.DataSource = kayitList.ToList();
+
+            dataGridView1.Columns[7].Visible = false;
+            dataGridView1.Columns[6].Visible = false;
         }
     }
 }

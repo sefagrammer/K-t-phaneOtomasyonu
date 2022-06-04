@@ -31,19 +31,20 @@ namespace KutuphaneOtomasyonu
             KaynakEkleBtn.Visible = false;
             KaynakDuzenleBtn.Visible = false;
             KaynakSilBtn.Visible = false;
-
-
         }
-
+        private KullaniciListeForm klisteForm;
         private void Kullanicibtn_Click(object sender, EventArgs e)
         {
+
             if (Keklebtn.Visible == false)
             {
-
                 Keklebtn.Visible = true;
                 Kduzenbtn.Visible = true;
                 Ksilbtn.Visible = true;
 
+                klisteForm= new KullaniciListeForm();
+                klisteForm.MdiParent = this;
+                klisteForm.Show();
             }
 
             else
@@ -52,35 +53,70 @@ namespace KutuphaneOtomasyonu
                 Keklebtn.Visible = false;
                 Kduzenbtn.Visible = false;
                 Ksilbtn.Visible = false;
-                
-            }
 
-            KullaniciListeForm klisteForm = new KullaniciListeForm();
-            klisteForm.MdiParent = this;
-            klisteForm.Show();
+                klisteForm.Close();
+            }
         }
+
+        //Kullanici Form Bug Fixes
+        private KullaniciEkleForm ekleForm;
+        private KullaniciSilForm ksil;
+        private KullaniciGuncelleForm kdu;
+
+
+        private bool ekleKullaniciDurum = false;
+        private bool silKullaniciDurum = false;
+        private bool KduzenDurum = false;
+        //Kullanici Form Bug Fixes end
 
         private void Keklebtn_Click(object sender, EventArgs e)
         {
-            KullaniciEkleForm ekleForm = new KullaniciEkleForm();
-            ekleForm.MdiParent = this;
-            ekleForm.Show();
+            if (ekleKullaniciDurum == false)
+            {
+                ekleForm = new KullaniciEkleForm();
+                ekleForm.MdiParent = this;
+                ekleForm.Show();
+                ekleKullaniciDurum = true;
+            }
+            else
+            {
+                ekleForm.Close();
+                ekleKullaniciDurum = false;
+            }
         }
 
         private void Ksilbtn_Click(object sender, EventArgs e)
         {
-            KullaniciSilForm ksil = new KullaniciSilForm();
-            ksil.MdiParent = this;
-            ksil.Show();
+            if (silKullaniciDurum == false)
+            {
+                ksil = new KullaniciSilForm();
+                ksil.MdiParent = this;
+                ksil.Show();
+                silKullaniciDurum = true;
+            }
+            else
+            {
+                ksil.Close();
+                silKullaniciDurum = false;
+            }
         }
 
         private void Kduzenbtn_Click(object sender, EventArgs e)
         {
-           KullaniciGuncelleForm kdu = new KullaniciGuncelleForm();
-           kdu.MdiParent = this;
-           kdu.Show();
+            if (KduzenDurum == false)
+            {
+                kdu = new KullaniciGuncelleForm();
+                kdu.MdiParent = this;
+                kdu.Show();
+                KduzenDurum = true;
+            }
+            else
+            {
+                kdu.Close();
+                KduzenDurum = false;
+            }
         }
-
+        private KaynakListeForm kListe;
         private void button1_Click(object sender, EventArgs e)
         {
             if (KaynakEkleBtn.Visible == false)
@@ -90,6 +126,9 @@ namespace KutuphaneOtomasyonu
                 KaynakDuzenleBtn.Visible = true;
                 KaynakSilBtn.Visible = true;
 
+                kListe = new KaynakListeForm();
+                kListe.MdiParent = this;
+                kListe.Show();
             }
 
             else
@@ -99,47 +138,107 @@ namespace KutuphaneOtomasyonu
                 KaynakDuzenleBtn.Visible = false;
                 KaynakSilBtn.Visible = false;
 
+                kListe.Close();
             }
-
-            KaynakListeForm kListe = new KaynakListeForm();
-            kListe.MdiParent = this;
-            kListe.Show();
         }
+
+        //Kaynak Form Bug Fixes
+        private KaynakEkleForm kEkle;
+        private KaynakSilForm kSil;
+        private KaynakGuncelleForm kGuncel;
+
+        private bool KaynakEkleDurum = false;
+        private bool KaynakSilDurum = false;
+        private bool KaynakDuzenDurum = false;
+        //End
 
         private void KaynakEkleBtn_Click(object sender, EventArgs e)
         {
-            KaynakEkleForm kEkle = new KaynakEkleForm();
-            kEkle.MdiParent = this;
-            kEkle.Show();
+            if (KaynakEkleDurum == false)
+            {
+                kEkle = new KaynakEkleForm();
+                kEkle.MdiParent = this;
+                kEkle.Show();
+                KaynakEkleDurum = true;
+            }
+            else
+            {
+                kEkle.Close();
+                KaynakEkleDurum = false;
+            }
         }
 
         private void KaynakSilBtn_Click(object sender, EventArgs e)
         {
-            KaynakSilForm kSil = new KaynakSilForm();
-            kSil.MdiParent = this;  
-            kSil.Show();
+            if (KaynakSilDurum == false)
+            {
+                kSil = new KaynakSilForm();
+                kSil.MdiParent = this;
+                kSil.Show();
+                KaynakSilDurum=true;
+            }
+            else
+            {
+                kSil.Close();
+                KaynakSilDurum = false;
+            }
         }
 
         private void KaynakDuzenleBtn_Click(object sender, EventArgs e)
         {
-            KaynakGuncelleForm kGuncel = new KaynakGuncelleForm();
-            kGuncel.MdiParent = this;
-            kGuncel.Show();
-
+            if (KaynakDuzenDurum == false)
+            {
+                kGuncel = new KaynakGuncelleForm();
+                kGuncel.MdiParent = this;
+                kGuncel.Show();
+                KaynakDuzenDurum=true;
+            }
+            else
+            {
+                kGuncel.Close();
+                KaynakDuzenDurum = false;
+            }
         }
+
+        //Ödünç Ver Ve Geri Al Bug Fixes
+        private OduncForm odunc;
+        private GeriAlForm geriAl;
+
+        private bool OduncDurum = false;
+        private bool GeriAlDurum = false;
+
+        //End
 
         private void button2_Click(object sender, EventArgs e)
         {
-            OduncForm odunc = new OduncForm();
-            odunc.MdiParent = this;
-            odunc.Show();
+            if (OduncDurum == false)
+            {
+                odunc = new OduncForm();
+                odunc.MdiParent = this;
+                odunc.Show();
+                OduncDurum=true;
+            }
+            else
+            {
+                odunc.Close();
+                OduncDurum = false;
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            GeriAlForm geriAl = new GeriAlForm();
-            geriAl.MdiParent = this;
-            geriAl.Show();
+            if (GeriAlDurum == false)
+            {
+                geriAl = new GeriAlForm();
+                geriAl.MdiParent = this;
+                geriAl.Show();
+                GeriAlDurum=true;
+            }
+            else
+            {
+                geriAl.Close();
+                GeriAlDurum = false;
+            }
         }
     }
 }
